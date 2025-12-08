@@ -271,4 +271,4 @@ For issues or questions:
 
 ---
 
-**Built with Flutter 💙**
+**Built by Prakash Ramakrishnan**
