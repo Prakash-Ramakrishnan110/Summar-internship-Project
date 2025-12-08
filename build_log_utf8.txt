@@ -1,0 +1,45 @@
+Support for Android x86 targets will be removed in the next stable release after 3.27. See https://github.com/flutter/flutter/issues/157543 for details.
+Running Gradle task 'assembleDebug'...                          
+Your project is configured with Android NDK 26.3.11579264, but the following plugin(s) depend on a different Android NDK version:
+- cloud_firestore requires Android NDK 27.0.12077973
+- firebase_auth requires Android NDK 27.0.12077973
+- firebase_core requires Android NDK 27.0.12077973
+- flutter_plugin_android_lifecycle requires Android NDK 27.0.12077973
+- fluttertoast requires Android NDK 27.0.12077973
+- geolocator_android requires Android NDK 27.0.12077973
+- google_maps_flutter_android requires Android NDK 27.0.12077973
+- image_picker_android requires Android NDK 27.0.12077973
+- path_provider_android requires Android NDK 27.0.12077973
+- razorpay_flutter requires Android NDK 27.0.12077973
+- sqflite_android requires Android NDK 27.0.12077973
+Fix this issue by using the highest Android NDK version (they are backward compatible).
+Add the following to C:\Users\praka\Desktop\HyperLocalPro\android\app\build.gradle.kts:
+
+    android {
+        ndkVersion = "27.0.12077973"
+        ...
+    }
+lib/screens/onboarding/onboarding_screen.dart:194:19: Error: No named parameter with the name 'textColor'.
+                  textColor: AppColors.primary,
+                  ^^^^^^^^^
+lib/widgets/custom_button.dart:11:9: Context: Found this candidate, but the arguments don't match.
+  const CustomButton({
+        ^^^^^^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'C:\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 7s
+Running Gradle task 'assembleDebug'...                              8.4s
+Gradle task assembleDebug failed with exit code 1
